@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Eljoker</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raouf 123 - مكتبة</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-  <header>
-    <img id="banner" alt="banner" />
-    <h1 id="name"></h1>
-  </header>
+    <header>
+        <h1>✨ أهــلًا بـيــك يـابشمهندس ✨</h1>
+    </header>
 
-  <section class="about">
-    <h2>عنّي</h2>
-    <p id="bio"></p>
-  </section>
+    <section class="branch-selection">
+        <h2>✨اختار شعبتك✨</h2>
+        <nav>
+            <a href="index.html">شعبة اجهزة</a>
+            <a href="شبكات.html">شعبة شبكات</a> 
+            <a href="حاسبات.html">شعبة حاسبات</a>
+            <a href="الات كهربيه.html">شعبة الات كهربية</a>
+            <a href="تبريد و تكيف.html">شعبة تبريد و تكيف</a> 
+            <a href="سيارات .html">شعبة سيارات</a> 
+        </nav>
+    </section>
 
-  <section class="courses">
-    <h2>📚 الكورسات</h2>
-    <div id="courses-container" class="grid"></div>
-  </section>
+    <main class="branch-content">
+        <img src="logo/RR.png" alt="شعار" class="logo">
+        
+        <h1># شعبه اجهزه 🖤</h1>
+        <p class="description">مكتبه شعبه اجهزه الصف الثاني الترم الاول</p>
+        
+        <div class="quran-verse">
+            <h2>﴿ وَأَنْ لَيْسَ لِلْإِنسَانِ إِلَّا مَا سَعَىٰ ﴾</h2>
+            <p>دوس علي المادا الي عايز تذاكرها بس براحه عشان المواد مش بتعتنا 😉</p>
+        </div>
+        
+        <div class="materials-status">
+            <h3>لا توجد مواد متاحة حالياً</h3>
+            <p>سيتم إضافة المواد الدراسية قريباً</p>
+        </div>
+        
+        <a href="sheets.html" class="sheets-link">افتح صفحة الشيتات</a>
+    </main>
+    
+    <section class="admin-login">
+        <h2>دخول الأدمن</h2>
+        <form>
+            <label for="password">كلمة المرور</label>
+            <input type="password" id="password" required>
+            <button type="submit">دخول</button>
+            <button type="reset">إلغاء</button>
+            <p class="error-message">كلمة المرور غير صحيحة</p>
+        </form>
+    </section>
 
-  <footer>
-    <p>© 2025 Mohamed Eljoker</p>
-  </footer>
-
-  <script>
-    async function loadData() {
-      const res = await fetch( data.json );
-      const data = await res.json();
-
-      document.getElementById( name ).textContent = data.name;
-      document.getElementById( banner ).src = data.banner;
-      document.getElementById( bio ).textContent = data.bio;
-
-      const container = document.getElementById( courses-container );
-      data.courses.forEach(c => {
-        const card = document.createElement( div );
-        card.className =  course-card ;
-        card.innerHTML = `
-          <img src="${c.image}" alt="${c.title}" />
-          <h3>${c.title}</h3>
-          <p>${c.description}</p>
-          <a href="${c.link}" target="_blank">شاهد الكورس</a>
-        `;
-        container.appendChild(card);
-      });
-    }
-    loadData();
-  </script>
+    <footer>
+        <p>❤ Made by - Raouf ❤</p>
+    </footer>
 </body>
 </html>
