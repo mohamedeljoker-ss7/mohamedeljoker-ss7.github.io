@@ -1,66 +1,57 @@
-<p align="center">
-  <img src="file_0000000062e86246aee3bad8d6d755c8.png
-    _E.png?raw=true" width="100%" alt="Mohamed Eljoker Banner"/>
-</p>
-
-<h1 align="center">👋 أهلاً بيك! أنا <span style="color:#00FF88;">Mohamed Eljoker</span> 💻</h1>
+<!-- 🌑 README.md by Mohamed Eljoker -->
 
 <p align="center">
-مطور برمجيات ومهتم بمجال التداول المالي | Software Developer & Trader  
+  <img src="https://github.com/mohamedeljoker-ss7/mohamedeljoker-ss7.github.io/blob/main/0000000062e86246aee3bad8d6_d755c8.png?raw=true" width="100%" alt="Mohamed Eljoker Banner"/>
 </p>
+
+---
+
+<h1 align="center" style="color:#00FF88;">👨‍💻 Mohamed Eljoker</h1>
+<h3 align="center" style="color:#C0C0C0;">Developer • Trader • Innovator</h3>
 
 ---
 
 ### 🧠 About Me | نبذة عني
-
-- 💡 أحب البرمجة ودمجها مع عالم **التداول الذكي**.  
-- ⚙️ أعمل على تطوير أدوات تحليل تساعد المتداولين على اتخاذ قرارات أدق.  
-- 🎯 هدفي إنشاء أنظمة تجمع بين **الذكاء الصناعي** و**التحليل الفني**.  
-- 🌍 أستخدم GitHub لعرض مشاريعي ومشاركة أفكاري مع الآخرين.
+- 💻 مطور برمجيات مهتم بالجمع بين **الذكاء الصناعي** و**التحليل المالي**.  
+- 📈 أعمل على أدوات تساعد المتداولين على اتخاذ قرارات دقيقة وسريعة.  
+- ⚡ أسعى دائمًا لدمج البرمجة مع التكنولوجيا المالية لتحقيق أفضل أداء.  
+- 🚀 أهدف إلى بناء مشاريع تغير طريقة التفكير في التداول.
 
 ---
 
-### 💻 Skills | المهارات
-
-| المجال | المهارات الأساسية |
-|:--------|:------------------|
-| **Frontend** | HTML5, CSS3, JavaScript |
+### 💻 My Skills | مهاراتي
+| المجال | التقنيات |
+|:--------|:-----------|
+| **Frontend** | HTML, CSS, JavaScript |
 | **Backend** | Python (Flask), Node.js |
-| **Trading Tools** | API Integration, TradingView Scripts |
+| **Trading Tools** | Binance API, MT5, TradingView |
 | **Other** | Git, GitHub Pages, Automation |
 
 ---
 
-### 🚀 My Projects | مشاريعي
-
-🔹 **Trading Dashboard** — لوحة تحكم لعرض بيانات السوق في الوقت الفعلي.  
-🔹 **AI Bot** — روبوت تداول ذكي يعتمد على تحليل الاتجاهات.  
-🔹 **Web Analyzer** — تطبيق ويب لتحليل بيانات التداول.  
-
-> جميع المشاريع متاحة على [My Portfolio Website](https://mohamedeljoker-ss7.github.io)
+### 🚀 Featured Projects | مشاريعي المميزة
+🔹 **Mr. Bot** — مساعد ذكي يشرح المشاريع التقنية خطوة بخطوة.  
+🔹 **Trading Analyzer** — أداة تحليل سوق حية باستخدام الذكاء الصناعي.  
+🔹 **Code Engine** — منصة أكواد لتحسين الأداء والتداول الآلي.
 
 ---
 
 ### 🌐 Connect With Me | تواصل معي
 
 <p align="center">
-  <a href="https://github.com/mohamedeljoker-ss7" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-00FF88?style=for-the-badge&logo=github&logoColor=black" alt="GitHub"/>
+  <a href="mailto:mohamedeljoker.dev@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-000000?style=for-the-badge&logo=gmail&logoColor=00FF88" alt="Gmail"/>
   </a>
-  <a href="https://mohamedeljoker-ss7.github.io" target="_blank">
-    <img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=firefox&logoColor=white" alt="Website"/>
+  <a href="https://t.me/mohamedeljoker">
+    <img src="https://img.shields.io/badge/Telegram-000000?style=for-the-badge&logo=telegram&logoColor=00FF88" alt="Telegram"/>
   </a>
-  <a href="mailto:youremail@example.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-FFFFFF?style=for-the-badge&logo=gmail&logoColor=red" alt="Email"/>
+  <a href="https://github.com/mohamedeljoker-ss7">
+    <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=00FF88" alt="GitHub"/>
   </a>
 </p>
 
 ---
 
-### 🪪 License
-MIT License © 2025 Mohamed Eljoker  
-Feel free to use and modify with credit ✨
-
----
-
-<h3 align="center">✨ Developed with passion by <span style="color:#00FF88;">Mohamed Eljoker</span> ✨</h3>
+<p align="center" style="color:#00FF88;">
+🖤 Designed & Developed by <b>Mohamed Eljoker</b> 💚  
+</p>
