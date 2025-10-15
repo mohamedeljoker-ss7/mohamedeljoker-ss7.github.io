@@ -1,157 +1,206 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!doctype html>
+
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>موقع محمد الجوكر</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>محمد الجوكر — موقع شخصي</title>
+  <meta name="description" content="موقع شخصي — محمد الجوكر (مطور وبرامج وتداول)" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family:  Cairo , sans-serif;
-      margin: 0;
-      background-color: #0f172a;
-      color: #f1f5f9;
-      scroll-behavior: smooth;
+    :root{
+      --bg1:#050506; /* very dark */
+      --bg2:#0d0f10;
+      --card:#0f1720;
+      --text:#e6eef3;
+      --muted:#99a1aa;
+      --accent:#7EE787; /* light green */
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
     }
-    header {
-      background-color: #1e293b;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:  Tajawal , system-ui, -apple-system,  Segoe UI , Roboto, Arial; background:linear-gradient(180deg,var(--bg1),var(--bg2)); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;
+      padding:28px 18px;
+      -webkit-font-feature-settings: "liga" 1;
     }
-    header h1 { color: #38bdf8; margin: 0; }
-    nav a {
-      color: #f8fafc;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    nav a:hover { color: #38bdf8; }
-    section { padding: 3rem 2rem; text-align: center; }
-    .hero {
-      background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-      color: white;
-      padding: 4rem 2rem;
-    }
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background-color: #1e293b;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .card h3 { color: #38bdf8; }
-    .buttons a {
-      display: inline-block;
-      margin: 5px;
-      padding: 8px 15px;
-      border-radius: 8px;
-      background-color: #38bdf8;
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .buttons a:hover { background-color: #0284c7; color: #fff; }
-    form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, textarea {
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-family: inherit;
-    }
-    button {
-      background-color: #38bdf8;
-      border: none;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    button:hover { background-color: #0284c7; color: #fff; }
-    footer {
-      background-color: #1e293b;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+    .wrap{max-width:var(--maxw); margin:0 auto}/* Header */
+header{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.brand{display:flex; align-items:center; gap:12px}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#0b1220,#071018);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px}
+nav{display:flex; gap:12px; align-items:center}
+nav a{color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:8px}
+nav a:hover{color:var(--accent); background:var(--glass)}
+.btn{background:var(--accent); color:#042024; padding:8px 12px; border-radius:10px; font-weight:700; text-decoration:none}
+
+/* Hero */
+.hero{display:grid; grid-template-columns:1fr 320px; gap:26px; margin-top:26px; align-items:center}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:var(--radius); box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+h1{margin:0 0 10px 0; font-size:30px}
+p.lead{color:var(--muted); margin:0}
+.actions{display:flex; gap:12px; margin-top:18px}
+
+/* profile */
+.profile{display:flex; flex-direction:column; align-items:center; gap:12px}
+.avatar{width:180px;height:180px;border-radius:20px;background:linear-gradient(135deg,#071018,#0b1220);display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{margin-top:28px}
+.grid-2{display:grid; grid-template-columns:1fr 320px; gap:18px}
+.projects{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px}
+.proj{padding:14px; border-radius:12px; background:rgba(255,255,255,0.02); transition:transform .25s ease, box-shadow .25s ease;}
+.proj:hover{transform:translateY(-8px); box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.tag{font-size:12px; padding:6px 8px; border-radius:999px; background:rgba(255,255,255,0.03); color:var(--muted)}
+
+/* contact form */
+form input, form textarea{width:100%; padding:12px; border-radius:12px; background:#071018; border:1px solid rgba(255,255,255,0.03); color:var(--text); margin-bottom:8px}
+form button{background:var(--accent); border:none; padding:10px 14px; border-radius:12px; color:#042024; font-weight:800; cursor:pointer}
+
+footer{margin-top:30px; color:var(--muted); text-align:center}
+
+/* reveal animations */
+.reveal{opacity:0; transform: translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1; transform:none}
+
+/* floating background shapes */
+.bg-shapes{position:fixed; inset:0; pointer-events:none; z-index:0}
+.shape{position:absolute; filter:blur(40px); opacity:.12}
+.s1{right:10%; top:6%; width:420px; height:420px; background:linear-gradient(90deg, var(--accent), #60a5fa); border-radius:50%}
+.s2{left:6%; bottom:10%; width:320px; height:320px; background:linear-gradient(90deg,#34d399, #059669); border-radius:30%}
+
+/* back to top */
+.to-top{position:fixed; bottom:22px; left:22px; background:var(--accent); color:#042024; padding:10px; border-radius:12px; font-weight:800; display:none; z-index:60}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .avatar{width:110px;height:110px;font-size:24px}
+  .grid-2{grid-template-columns:1fr}
+  .s1{display:none}
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>محمد الجوكر</h1>
-    <nav>
-      <a href="#about">عني</a>
-      <a href="#projects">المشاريع</a>
-      <a href="#contact">تواصل</a>
-      <a href="https://github.com/mohamedeljoker-ss7" target="_blank">GitHub</a>
-    </nav>
-  </header>  <section class="hero">
-    <h2>أهلاً بك في موقعي الشخصي</h2>
-    <p>أنا مطور مهتم بإنشاء مشاريع تقنية مبدعة ومفيدة، وهذه لمحة عن أعمالي.</p>
-  </section>  <section id="about">
-    <h2>نبذة عني</h2>
-    <p>محمد الجوكر – مطور مواقع وتطبيقات شغوف بالتقنية والتصميم. أحب تجربة أفكار جديدة واستخدام أدوات حديثة لجعل البرمجة ممتعة وسهلة للآخرين.</p>
-  </section>  <section id="projects">
-    <h2>مشاريعي</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200/0ea5e9/ffffff?text=مشروع+1" alt="مشروع 1">
-        <h3>موقع شخصي متكامل</h3>
-        <p>تصميم بسيط وجذاب يعرض البورتفوليو والسيرة الذاتية بخطوات سهلة.</p>
-        <div class="buttons">
-          <a href="#">عرض المشروع</a>
-          <a href="https://github.com/mohamedeljoker-ss7" target="_blank">كود GitHub</a>
+  <div class="bg-shapes" aria-hidden>
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+  </div>  <div class="wrap" style="position:relative;z-index:2">
+    <header>
+      <div class="brand">
+        <div class="logo">MJ</div>
+        <div>
+          <div style="font-weight:800">محمد الجوكر</div>
+          <div class="small">مهندس إلكترونيات — مطوّر ويب</div>
         </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200/3b82f6/ffffff?text=مشروع+2" alt="مشروع 2">
-        <h3>تطبيق ذكاء اصطناعي</h3>
-        <p>تطبيق ويب ذكي يقدّم تفاعلاً حقيقياً مع المستخدم بلغة طبيعية.</p>
-        <div class="buttons">
-          <a href="#">عرض المشروع</a>
-          <a href="https://github.com/mohamedeljoker-ss7" target="_blank">كود GitHub</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200/1e40af/ffffff?text=مشروع+3" alt="مشروع 3">
-        <h3>لوحة تحكم Dashboard</h3>
-        <p>نظام تحليلي بسيط بإحصاءات تفاعلية وتصميم عصري متجاوب.</p>
-        <div class="buttons">
-          <a href="#">عرض المشروع</a>
-          <a href="https://github.com/mohamedeljoker-ss7" target="_blank">كود GitHub</a>
-        </div>
+      <nav>
+        <a href="#about">عنّي</a>
+        <a href="#projects">مشاريعي</a>
+        <a href="#contact">تواصل</a>
+        <a class="btn" href="https://github.com/mohamedeljoker-ss7" target="_blank">GitHub</a>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <div class="card reveal">
+      <h1>مرحبًا — أنا <span style="color:var(--accent)">محمد الجوكر</span></h1>
+      <p class="lead">مهندس إلكترونيات ومطور واجهات. أدمج المعرفة الهندسية مع تصميم واجهات حديثة لبناء حلول متكاملة.</p>
+      <div class="actions">
+        <a class="btn" href="#projects">مشاريعي</a>
+        <a style="padding:8px 12px; border-radius:10px; color:var(--muted); background:transparent; text-decoration:none" href="#contact">تواصل الآن</a>
       </div>
     </div>
-  </section>  <section id="contact">
-    <h2>تواصل معي</h2>
-    <form action="https://formspree.io/f/xqkrgepy" method="POST">
+
+    <aside class="card profile reveal">
+      <div class="avatar">MJ</div>
+      <div style="text-align:center">
+        <div style="font-weight:800">محمد الجوكر</div>
+        <div class="small">Embedded & Frontend</div>
+        <div style="margin-top:10px"><a href="https://github.com/mohamedeljoker-ss7" target="_blank" style="color:var(--muted);text-decoration:none">@mohamedeljoker-ss7</a></div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="about" class="card reveal">
+    <h2>عنّي</h2>
+    <p class="small">أعمل في تصميم الدوائر، برمجة المتحكمات، وتطوير الواجهات. أقدّم حلولًا عملية وسريعة التنفيذ، مع ميل للأدوات التي تساعد المتداولين والمحللين.</p>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:right">مشاريعي</h2>
+    <div class="projects">
+      <div class="proj reveal card">
+        <h3>موقع شخصي متكامل</h3>
+        <p class="small">نسخة ثابتة مستضافة على GitHub Pages تعرض السيرة الذاتية والمشاريع.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+        <div style="margin-top:10px"><a class="btn" href="#" style="background:#fff;color:#042024">عرض</a> <a class="btn" href="https://github.com/mohamedeljoker-ss7" target="_blank">كود</a></div>
+      </div>
+
+      <div class="proj reveal card">
+        <h3>أداة تحليل السوق</h3>
+        <p class="small">لوحة تحكم تعرض بيانات الأسعار ومؤشرات جاهزة للتحليل.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span></div>
+        <div style="margin-top:10px"><a class="btn" href="#">عرض</a> <a class="btn" href="https://github.com/mohamedeljoker-ss7" target="_blank">كود</a></div>
+      </div>
+
+      <div class="proj reveal card">
+        <h3>روبوت تداول بسيط</h3>
+        <p class="small">روبوت صغير يعتمد قواعد بسيطة لإدخال أوامر تجريبية باستخدام بيانات وهمية.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Backtest</span></div>
+        <div style="margin-top:10px"><a class="btn" href="#">عرض</a> <a class="btn" href="https://github.com/mohamedeljoker-ss7" target="_blank">كود</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>تواصل</h2>
+    <p class="small">استخدم النموذج أدناه للتواصل معي. أستخدم Formspree لتلقي الرسائل.</p>
+    <form action="https://formspree.io/f/mayvneoq" method="POST">
       <input type="text" name="name" placeholder="الاسم" required>
       <input type="email" name="email" placeholder="البريد الإلكتروني" required>
       <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
       <button type="submit">إرسال</button>
     </form>
-  </section>  <footer>
-    <p>© 2025 محمد الجوكر - جميع الحقوق محفوظة</p>
+  </section>
+
+  <footer>
+    © 2025 محمد الجوكر — All rights reserved
   </footer>
-</body>
+
+</main>
+
+  </div><button class="to-top" id="toTop">أعلى</button>
+
+  <script>
+    // Scroll reveal using IntersectionObserver
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add( show );
+      });
+    },{threshold:0.12});
+    document.querySelectorAll( .reveal ).forEach(el=>observer.observe(el));
+
+    // Back to top
+    const toTop = document.getElementById( toTop );
+    window.addEventListener( scroll , ()=>{
+      if(window.scrollY > 400) toTop.style.display =  block ; else toTop.style.display =  none ;
+    });
+    toTop.addEventListener( click , ()=>window.scrollTo({top:0,behavior: smooth }));
+
+    // small floating shape animation (slow)
+    const s1 = document.querySelector( .s1 );
+    const s2 = document.querySelector( .s2 );
+    let t = 0;
+    function floatShapes(){
+      t += 0.002;
+      if(s1) s1.style.transform = `translateY(${Math.sin(t*2)*18}px) translateX(${Math.cos(t)*8}px) rotate(${t*40}deg)`;
+      if(s2) s2.style.transform = `translateY(${Math.cos(t*1.6)*12}px) translateX(${Math.sin(t*0.9)*6}px) rotate(${t*10}deg)`;
+      requestAnimationFrame(floatShapes);
+    }
+    requestAnimationFrame(floatShapes);
+  </script></body>
 </html>
