@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد الجوكر - مبرمج ومتداول</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* المتغيرات (لتغيير الألوان بسهولة) */
+        :root {
+            --primary-color: #007BFF; /* أزرق أساسي (يمكن تغييره إلى #10c9c3 لألوان مائية أو #ff5722 للبرتقالي) */
+            --secondary-color: #28a745; /* أخضر للتداول والنجاح */
+            --background-color: #f8f9fa; /* خلفية فاتحة */
+            --text-color: #343a40; /* لون النص الأساسي */
+            --header-bg: #ffffff; /* خلفية الهيدر */
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* التصميم العام */
+        body {
+            font-family:  Cairo , sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        /* الهيدر وقسم النبذة */
+        header {
+            background-color: var(--header-bg);
+            padding: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+        }
+
+        /* الأقسام المختلفة */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        section h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            font-size: 2em;
+            position: relative;
+        }
+
+        section h2::after {
+            content:   ;
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--header-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* قسم التداول */
+        #trading-courses .card h3 {
+            color: var(--secondary-color);
+        }
+
+        /* الروابط والتذييل */
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #343a40;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <nav style="text-align: left;">
+                <a href="#programming" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">البرمجة</a>
+                <a href="#trading" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">التداول</a>
+                <a href="#contact" style="color: var(--text-color); text-decoration: none;">تواصل</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="https://via.placeholder.com/150/007BFF/FFFFFF?text=MJ" alt="صورة محمد الجوكر" class="profile-img">
+            <h1>أهلاً بك، أنا محمد الجوكر</h1>
+            <p>مطور برمجيات ذو شغف ببناء الأنظمة الرقمية، ومحلل فني متمرس في أسواق المال والتداول.</p>
+            <div class="social-links">
+                <a href="https://github.com/mohamedeljoker-ss7" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> 
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="programming">
+        <div class="container">
+            <h2>💻 مشاريع وكورسات البرمجة</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>مشروع تطوير الويب</h3>
+                    <p>بناء موقع ديناميكي باستخدام MERN Stack، مع التركيز على الأداء والأمان.</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none;">شاهد المشروع</a>
+                </div>
+                <div class="card">
+                    <h3>دورة Python للمبتدئين</h3>
+                    <p>كورس شامل لتعلم أساسيات لغة بايثون، من الصفر حتى بناء أول سكريبت.</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none;">ابدأ الدورة</a>
+                </div>
+                <div class="card">
+                    <h3>أداة SS7 Attacker</h3>
+                    <p>تفاصيل حول أداة SS7 لتطوير اختبارات الأمان في شبكات الاتصالات (لأغراض تعليمية فقط).</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none;">اقرأ المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trading">
+        <div class="container">
+            <h2>📈 الخبرة وكورسات التداول</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>استراتيجيات الفوركس</h3>
+                    <p>شرح متعمق لأفضل استراتيجيات تداول العملات العالمية، مع إدارة رأس المال.</p>
+                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">تعلّم الاستراتيجية</a>
+                </div>
+                <div class="card">
+                    <h3>التحليل الفني للعملات الرقمية</h3>
+                    <p>كورسات متقدمة في التحليل الموجي ونماذج الشموع لتداول البيتكوين والعملات الأخرى.</p>
+                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">شاهد الكورس</a>
+                </div>
+                <div class="card">
+                    <h3>التعامل مع المخاطر</h3>
+                    <p>أهمية إخلاء المسؤولية وإدارة المخاطر في الأسواق المالية قبل البدء بالتداول.</p>
+                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">اقرأ التحذير</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>📧 تواصل معي</h2>
+            <p style="font-size: 1.1em;">هل لديك استفسار أو مشروع تريد مناقشته؟</p>
+            <p>أرسل لي بريدًا إلكترونيًا على: **your.email@example.com**</p>
+            <p>أو تواصل معي عبر:</p>
+            <div class="social-links">
+                <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 محمد الجوكر. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+              
