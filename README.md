@@ -1,29 +1,55 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>موقع محمد الجوكر</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family:  Cairo , sans-serif;
-      margin: 0;
-      background-color: #0f172a;
-      color: #f1f5f9;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: #1e293b;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 { color: #38bdf8; margin: 0; }
-    nav a {
-      color: #f8fafc;
-      text-decoration: none;
-      margin: 0 10px;
+# 💻 محمد الجوكر | Mohamed Eljoker
+
+مرحبًا بك في موقعي الشخصي 🚀  
+أعمل كمطور برمجيات ومهتم بمجال التداول والتحليل المالي باستخدام التقنيات الحديثة.  
+هذا الموقع يعرض نبذة عني، مشاريعي البرمجية، وبعض أدواتي المخصصة لمتداولي الفوركس والكريبتو.
+
+---
+
+## 🌐 Live Preview
+🔗 [Visit My Website](https://mohamedeljoker-ss7.github.io)
+
+---
+
+## 🧠 About Me
+- 👨‍💻 I m a **programmer** and **trader** passionate about building smart tools that help automate analysis and improve decision-making.  
+- 📊 أحب الجمع بين **البرمجة** و**التداول** لإنتاج أنظمة ذكية تسهّل عملية فهم السوق.  
+- 🧩 أعمل على مشاريع تشمل:
+  - مؤشرات تداول (Trading Indicators)
+  - روبوتات تداول ذكية (Trading Bots)
+  - تطبيقات ويب تحليلية (Web Dashboards)
+
+---
+
+## ⚙️ Tech Stack
+- **Frontend:** HTML5, CSS3, JavaScript  
+- **Tools:** GitHub Pages, Formspree  
+- **Focus Areas:** Web Automation, API Integration, Trading Data Visualization  
+
+---
+
+## 🧩 Projects
+بعض المشاريع التي أعمل عليها:
+1. 💼 **Trading Dashboard** – لوحة تحكم تعرض بيانات السوق في الوقت الفعلي.
+2. 🤖 **Auto Strategy Bot** – روبوت يعتمد على خوارزميات تحليل الاتجاهات.
+3. 🧠 **Market Analyzer** – أداة ويب لتحليل مؤشرات السوق الذكية.
+
+---
+
+## 📬 Contact
+Feel free to reach out for collaborations or discussions about programming & trading 💬  
+📧 **Email:** [your-email@example.com]  
+🔗 **GitHub:** [mohamedeljoker-ss7](https://github.com/mohamedeljoker-ss7)
+
+---
+
+## 🪪 License
+This project is licensed under the **MIT License** – feel free to use and modify with attribution.
+
+---
+
+> ✨ Developed by **Mohamed Eljoker** — Combining Code & Market Logic 💡
+>       margin: 0 10px;
       font-weight: bold;
     }
     nav a:hover { color: #38bdf8; }
