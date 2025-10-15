@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: mohamedeljoker-ss7/mohamedeljoker-ss7.github.io  # ⚠️ تأكد من اسم المستودع
+  branch: main # أو master حسب الفرع الأساسي لموقعك
+  base_url: https://api.netlify.com # يستخدم للمصادقة
+  auth_scope: repo
+
+media_folder: "assets/img" # المجلد الذي يتم فيه رفع الصور
+public_folder: "/assets/img" # المسار العام للوصول للصور
+
+collections:
+  - name: "courses" # اسم التجميعة (يظهر في لوحة التحكم)
+    label: "كورسات البرمجة"
+    folder: "_posts" # المسار الذي يتم حفظ ملفات الكورسات فيه
+    create: true # السماح بإنشاء كورسات جديدة
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # صيغة اسم الملف (مهم لـ Jekyll)
+    fields:
+      - {label: "العنوان", name: "title", widget: "string", required: true}
+      - {label: "التاريخ", name: "date", widget: "datetime", default: "2025-01-01T00:00:00"}
+      - {label: "التصنيف", name: "categories", widget: "list", default: ["Programming"]}
+      - {label: "المحتوى", name: "body", widget: "markdown"} # محرر نصوص بصري
+
