@@ -1,46 +1,13 @@
 ---
-layout: default # هذا يخبر Jekyll أن يستخدم تخطيط (Layout) افتراضي إذا كان موجوداً
+layout: default
 title: محمد الجوكر - مبرمج ومتداول
 ---
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    ```
-
-### الخطوة 2: تحويل أقسام الكورسات إلى قراءة ديناميكية (Liquid)
-
-لجعل أقسام الكورسات قابلة للتعديل من الـ CMS، سنفترض أنك ستستخدم مجمّعتين (Collections) في ملف الـ CMS:
-
-* **`programming_courses`** (كورسات البرمجة)
-* **`trading_courses`** (كورسات التداول)
-
-سنقوم باستبدال محتوى القسمين في كود HTML الخاص بك:
-
-#### **قسم البرمجة (#programming):**
-
-ابحث عن الكود التالي:
-
-```html
-<section id="programming">
-    <div class="container">
-        <h2>💻 مشاريع وكورسات البرمجة</h2>
-        <div class="grid-3">
-            {% for course in site.programming_courses reversed %}
-            <div class="card">
-                <h3>{{ course.title }}</h3>
-                <p>{{ course.summary }}</p>
-                <a href="{{ course.url }}" style="color: var(--primary-color); text-decoration: none;">{{ course.link_text }}</a>
-            </div>
-            {% endfor %}
-            </div>
-    </div>
-</section>
-    <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد الجوكر - مبرمج ومتداول</title>
+    <title>{{ page.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
@@ -48,7 +15,7 @@ title: محمد الجوكر - مبرمج ومتداول
     <style>
         /* المتغيرات (لتغيير الألوان بسهولة) */
         :root {
-            --primary-color: #007BFF; /* أزرق أساسي (يمكن تغييره إلى #10c9c3 لألوان مائية أو #ff5722 للبرتقالي) */
+            --primary-color: #007BFF; /* أزرق أساسي */
             --secondary-color: #28a745; /* أخضر للتداول والنجاح */
             --background-color: #f8f9fa; /* خلفية فاتحة */
             --text-color: #343a40; /* لون النص الأساسي */
@@ -59,7 +26,7 @@ title: محمد الجوكر - مبرمج ومتداول
 
         /* التصميم العام */
         body {
-            font-family:  Cairo , sans-serif;
+            font-family: Cairo, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -154,7 +121,7 @@ title: محمد الجوكر - مبرمج ومتداول
         }
 
         /* قسم التداول */
-        #trading-courses .card h3 {
+        #trading .card h3 { /* تم التغيير ليتطابق مع الـ ID */
             color: var(--secondary-color);
         }
 
@@ -193,6 +160,7 @@ title: محمد الجوكر - مبرمج ومتداول
                 <a href="#programming" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">البرمجة</a>
                 <a href="#trading" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">التداول</a>
                 <a href="#contact" style="color: var(--text-color); text-decoration: none;">تواصل</a>
+                <a href="/admin/" style="margin-left: 15px; color: var(--secondary-color); text-decoration: none; font-weight: bold;">إدارة المحتوى</a>
             </nav>
         </div>
     </header>
@@ -214,22 +182,18 @@ title: محمد الجوكر - مبرمج ومتداول
         <div class="container">
             <h2>💻 مشاريع وكورسات البرمجة</h2>
             <div class="grid-3">
+                
+                {% assign programming_courses = site.programming_courses | reverse %}
+                {% for course in programming_courses limit: 3 %}
                 <div class="card">
-                    <h3>مشروع تطوير الويب</h3>
-                    <p>بناء موقع ديناميكي باستخدام MERN Stack، مع التركيز على الأداء والأمان.</p>
-                    <a href="#" style="color: var(--primary-color); text-decoration: none;">شاهد المشروع</a>
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.summary }}</p>
+                    <a href="{{ course.url }}" target="_blank" style="color: var(--primary-color); text-decoration: none;">{{ course.link_text }}</a>
                 </div>
-                <div class="card">
-                    <h3>دورة Python للمبتدئين</h3>
-                    <p>كورس شامل لتعلم أساسيات لغة بايثون، من الصفر حتى بناء أول سكريبت.</p>
-                    <a href="#" style="color: var(--primary-color); text-decoration: none;">ابدأ الدورة</a>
+                {% else %}
+                <p>لا توجد كورسات برمجة متاحة حالياً. يرجى إضافة محتوى جديد من لوحة التحكم.</p>
+                {% endfor %}
                 </div>
-                <div class="card">
-                    <h3>أداة SS7 Attacker</h3>
-                    <p>تفاصيل حول أداة SS7 لتطوير اختبارات الأمان في شبكات الاتصالات (لأغراض تعليمية فقط).</p>
-                    <a href="#" style="color: var(--primary-color); text-decoration: none;">اقرأ المزيد</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -237,22 +201,18 @@ title: محمد الجوكر - مبرمج ومتداول
         <div class="container">
             <h2>📈 الخبرة وكورسات التداول</h2>
             <div class="grid-3">
+                
+                {% assign trading_courses = site.trading_courses | reverse %}
+                {% for course in trading_courses limit: 3 %}
                 <div class="card">
-                    <h3>استراتيجيات الفوركس</h3>
-                    <p>شرح متعمق لأفضل استراتيجيات تداول العملات العالمية، مع إدارة رأس المال.</p>
-                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">تعلّم الاستراتيجية</a>
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.summary }}</p>
+                    <a href="{{ course.url }}" target="_blank" style="color: var(--secondary-color); text-decoration: none;">{{ course.link_text }}</a>
                 </div>
-                <div class="card">
-                    <h3>التحليل الفني للعملات الرقمية</h3>
-                    <p>كورسات متقدمة في التحليل الموجي ونماذج الشموع لتداول البيتكوين والعملات الأخرى.</p>
-                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">شاهد الكورس</a>
+                {% else %}
+                <p>لا توجد كورسات تداول متاحة حالياً. يرجى إضافة محتوى جديد من لوحة التحكم.</p>
+                {% endfor %}
                 </div>
-                <div class="card">
-                    <h3>التعامل مع المخاطر</h3>
-                    <p>أهمية إخلاء المسؤولية وإدارة المخاطر في الأسواق المالية قبل البدء بالتداول.</p>
-                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">اقرأ التحذير</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -264,20 +224,5 @@ title: محمد الجوكر - مبرمج ومتداول
             <p>أو تواصل معي عبر:</p>
             <div class="social-links">
                 <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 محمد الجوكر. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-</body>
-</html>
-
-              
+                <a href="#" target="_blank" title="Discord"><i class="fab fa-discord">
+                    
