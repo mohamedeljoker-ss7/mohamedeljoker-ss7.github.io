@@ -1,6 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://i.imgur.com/CHzF2iR.png" alt="Banner" width="100%" />
+  <img src="https://i.postimg.cc/MZ1CpsDR/file-0000000062e86246aee3bad8d6d755c8.png" alt="Mohamed Eljoker Banner" width="100%" />
 </p>
 
 <h1 align="center">👑 محمد الجوكر | Mohammed El Joker 👑</h1>
@@ -43,7 +43,7 @@
 <p align="center">
   <a href="https://t.me/Mo7amedEL_JOKER_ss7"><img src="https://img.shields.io/badge/Telegram-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></a>
   <a href="mailto:your.email@example.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/yourusername"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/mohamedeljoker-ss7"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
 ---
@@ -55,5 +55,5 @@
 ---
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=yourusername&theme=dark&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mohamedeljoker-ss7&theme=dark&hide_border=true" alt="GitHub Streak" />
 </p>
