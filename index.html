@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Eljoker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img id="banner" alt="banner" />
+    <h1 id="name"></h1>
+  </header>
+
+  <section class="about">
+    <h2>عنّي</h2>
+    <p id="bio"></p>
+  </section>
+
+  <section class="courses">
+    <h2>📚 الكورسات</h2>
+    <div id="courses-container" class="grid"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mohamed Eljoker</p>
+  </footer>
+
+  <script>
+    async function loadData() {
+      const res = await fetch( data.json );
+      const data = await res.json();
+
+      document.getElementById( name ).textContent = data.name;
+      document.getElementById( banner ).src = data.banner;
+      document.getElementById( bio ).textContent = data.bio;
+
+      const container = document.getElementById( courses-container );
+      data.courses.forEach(c => {
+        const card = document.createElement( div );
+        card.className =  course-card ;
+        card.innerHTML = `
+          <img src="${c.image}" alt="${c.title}" />
+          <h3>${c.title}</h3>
+          <p>${c.description}</p>
+          <a href="${c.link}" target="_blank">شاهد الكورس</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+    loadData();
+  </script>
+</body>
+</html>
