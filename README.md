@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://github.com/mohamedeljoker-ss7/mohamedeljoker-ss7.github.io/blob/main/A_digital_graphic_design_banner_features_Mohamed_E.png?raw=true" width="100%" alt="Mohamed Eljoker Banner"/>
+  <img src="file_0000000062e86246aee3bad8d6d755c8.png
+    _E.png?raw=true" width="100%" alt="Mohamed Eljoker Banner"/>
 </p>
 
 <h1 align="center">👋 أهلاً بيك! أنا <span style="color:#00FF88;">Mohamed Eljoker</span> 💻</h1>
