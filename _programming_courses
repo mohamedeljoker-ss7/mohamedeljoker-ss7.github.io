@@ -1,0 +1,16 @@
+---
+layout: default
+title: "دورة Python للمبتدئين"
+description: "تعلم أساسيات لغة بايثون خطوة بخطوة."
+image: "https://i.postimg.cc/MZ1CpsDR/file-0000000062e86246aee3bad8d6d755c8.png"
+---
+
+# 🐍 دورة Python للمبتدئين
+
+## المحتوى
+- ما هي لغة بايثون؟
+- كتابة أول برنامج.
+- المتغيرات والحلقات والدوال.
+
+🎥 **الفيديو الأول:**  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kqtD5dpn9C8" frameborder="0" allowfullscreen></iframe>
