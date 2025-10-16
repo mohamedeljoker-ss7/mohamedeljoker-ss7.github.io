@@ -1,228 +1,270 @@
----
-layout: default
-title: محمد الجوكر - مبرمج ومتداول
----
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* المتغيرات (لتغيير الألوان بسهولة) */
-        :root {
-            --primary-color: #007BFF; /* أزرق أساسي */
-            --secondary-color: #28a745; /* أخضر للتداول والنجاح */
-            --background-color: #f8f9fa; /* خلفية فاتحة */
-            --text-color: #343a40; /* لون النص الأساسي */
-            --header-bg: #ffffff; /* خلفية الهيدر */
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Eljoker | Courses</title>
+  <style>
+    body {
+      margin: 0;
+      font-family:  Cairo , sans-serif;
+      background: radial-gradient(circle at top, #0d0d12 0%, #000 100%);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-        /* التصميم العام */
-        body {
-            font-family: Cairo, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            text-align: right;
-        }
+    header {
+      background: linear-gradient(90deg, #0ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-top: 40px;
+      letter-spacing: 2px;
+    }
 
-        /* الهيدر وقسم النبذة */
-        header {
-            background-color: var(--header-bg);
-            padding: 20px 0;
-            box-shadow: var(--box-shadow);
-        }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .courses-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 0 20px;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 50px 0;
-        }
+    .course {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      width: 300px;
+      padding: 20px;
+      box-shadow: 0 0 10px #0ff3;
+      transition: 0.3s;
+    }
 
-        .hero h1 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
+    .course:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #0ff7;
+    }
 
-        .hero p {
-            font-size: 1.2em;
-            color: #6c757d;
-        }
+    .course img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid var(--primary-color);
-        }
+    .course h2 {
+      background: linear-gradient(90deg, #0ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
 
-        /* الأقسام المختلفة */
-        section {
-            padding: 40px 0;
-            border-bottom: 1px solid #e9ecef;
-        }
+    .course p {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-bottom: 15px;
+    }
 
-        section h2 {
-            text-align: center;
-            color: var(--text-color);
-            margin-bottom: 30px;
-            font-size: 2em;
-            position: relative;
-        }
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #0ff, #7b2ff7);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-        section h2::after {
-            content:   ;
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-        }
+    .btn:hover {
+      filter: brightness(1.2);
+    }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+    footer {
+      margin-top: 50px;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
 
-        .card {
-            background: var(--header-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
-        }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 10px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
 
-        .card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
+    .popup-content {
+      background: #111;
+      border-radius: 15px;
+      padding: 15px;
+      width: 90%;
+      max-width: 700px;
+    }
 
-        /* قسم التداول */
-        #trading .card h3 { /* تم التغيير ليتطابق مع الـ ID */
-            color: var(--secondary-color);
-        }
+    .close-btn {
+      background: #ff0077;
+      border: none;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      float: right;
+    }
 
-        /* الروابط والتذييل */
-        .social-links {
-            text-align: center;
-            margin-top: 20px;
-        }
+    /* قسم النبذة */
+    .about {
+      margin-top: 70px;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, #111, #000);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
 
-        .social-links a {
-            color: var(--text-color);
-            font-size: 24px;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .about h2 {
+      background: linear-gradient(90deg, #0ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
+    .about p {
+      color: #ccc;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      line-height: 1.8;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #343a40;
-            color: #ffffff;
-            font-size: 0.9em;
-        }
-    </style>
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social a {
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border: 1px solid #0ff5;
+      border-radius: 8px;
+      padding: 8px 14px;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: linear-gradient(90deg, #0ff, #7b2ff7);
+      color: #fff;
+      border-color: transparent;
+    }
+  </style>
 </head>
 <body>
-    
-    <header>
-        <div class="container">
-            <nav style="text-align: left;">
-                <a href="#programming" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">البرمجة</a>
-                <a href="#trading" style="margin-left: 15px; color: var(--text-color); text-decoration: none;">التداول</a>
-                <a href="#contact" style="color: var(--text-color); text-decoration: none;">تواصل</a>
-                <a href="/admin/" style="margin-left: 15px; color: var(--secondary-color); text-decoration: none; font-weight: bold;">إدارة المحتوى</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <img src="https://via.placeholder.com/150/007BFF/FFFFFF?text=MJ" alt="صورة محمد الجوكر" class="profile-img">
-            <h1>أهلاً بك، أنا محمد الجوكر</h1>
-            <p>مطور برمجيات ذو شغف ببناء الأنظمة الرقمية، ومحلل فني متمرس في أسواق المال والتداول.</p>
-            <div class="social-links">
-                <a href="https://github.com/mohamedeljoker-ss7" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> 
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-            </div>
-        </div>
-    </section>
+  <header>Mohamed Eljoker</header>
+  <div class="subtitle">💻 Programming & 📈 Trading Courses</div>
 
-    <section id="programming">
-        <div class="container">
-            <h2>💻 مشاريع وكورسات البرمجة</h2>
-            <div class="grid-3">
-                
-                {% assign programming_courses = site.programming_courses | reverse %}
-                {% for course in programming_courses limit: 3 %}
-                <div class="card">
-                    <h3>{{ course.title }}</h3>
-                    <p>{{ course.summary }}</p>
-                    <a href="{{ course.url }}" target="_blank" style="color: var(--primary-color); text-decoration: none;">{{ course.link_text }}</a>
-                </div>
-                {% else %}
-                <p>لا توجد كورسات برمجة متاحة حالياً. يرجى إضافة محتوى جديد من لوحة التحكم.</p>
-                {% endfor %}
-                </div>
-        </div>
-    </section>
+  <div class="courses-container" id="courses"></div>
 
-    <section id="trading">
-        <div class="container">
-            <h2>📈 الخبرة وكورسات التداول</h2>
-            <div class="grid-3">
-                
-                {% assign trading_courses = site.trading_courses | reverse %}
-                {% for course in trading_courses limit: 3 %}
-                <div class="card">
-                    <h3>{{ course.title }}</h3>
-                    <p>{{ course.summary }}</p>
-                    <a href="{{ course.url }}" target="_blank" style="color: var(--secondary-color); text-decoration: none;">{{ course.link_text }}</a>
-                </div>
-                {% else %}
-                <p>لا توجد كورسات تداول متاحة حالياً. يرجى إضافة محتوى جديد من لوحة التحكم.</p>
-                {% endfor %}
-                </div>
-        </div>
-    </section>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">X</button>
+      <iframe id="videoFrame" src=""></iframe>
+    </div>
+  </div>
 
-    <section id="contact">
-        <div class="container" style="text-align: center;">
-            <h2>📧 تواصل معي</h2>
-            <p style="font-size: 1.1em;">هل لديك استفسار أو مشروع تريد مناقشته؟</p>
-            <p>أرسل لي بريدًا إلكترونيًا على: **your.email@example.com**</p>
-            <p>أو تواصل معي عبر:</p>
-            <div class="social-links">
-                <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" target="_blank" title="Discord"><i class="fab fa-discord">
-                    
+  <!-- قسم النبذة -->
+  <section class="about">
+    <h2>About Mohamed Eljoker</h2>
+    <p>
+      أنا <strong>Mohamed Eljoker</strong>، مطوّر ومهتم بمجالات <b>البرمجة</b> و<b>التداول</b>،  
+      بحب أشارك معرفتي بطريقة بسيطة ومفهومة سواء بالعربي أو بالإنجليزي.  
+      هدفي إن كل شخص يتعلم skills تساعده يبني مستقبله بنفسه. 🚀
+    </p>
+    <div class="social">
+      <a href="https://github.com/mohamedeljoker-ss7" target="_blank">GitHub</a>
+      <a href="https://t.me/mohamedeljoker" target="_blank">Telegram</a>
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <footer>Built & Designed by <b>Mohamed Eljoker 💻</b> — © 2025</footer>
+
+  <script>
+    // بيانات الكورسات
+    const courses = [
+      {
+        title: "دورة HTML للمبتدئين | HTML for Beginners",
+        category: "Programming",
+        description: "ابدأ رحلتك في تصميم المواقع باستخدام HTML basics.",
+        image: "https://i.postimg.cc/MZ1CpsDR/file-0000000062e86246aee3bad8d6d755c8.png",
+        video: "https://www.youtube.com/embed/pQN-pnXPaVg"
+      },
+      {
+        title: "أساسيات تداول الفوركس | Forex Basics",
+        category: "Trading",
+        description: "تعلم أهم مفاهيم التداول وفهم سوق الفوركس خطوة بخطوة.",
+        image: "https://i.postimg.cc/L4Vz5mPn/trading-banner.png",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        title: "برمجة Python | Python Programming",
+        category: "Programming",
+        description: "تعلم كتابة أكواد Python بلغة سهلة وبأسلوب عملي.",
+        image: "https://i.postimg.cc/ncXkpr9G/python-banner.png",
+        video: "https://www.youtube.com/embed/kqtD5dpn9C8"
+      }
+    ];
+
+    const container = document.getElementById( courses );
+    courses.forEach(course => {
+      const div = document.createElement( div );
+      div.className =  course ;
+      div.innerHTML = `
+        <img src="${course.image}" alt="${course.title}">
+        <h2>${course.title}</h2>
+        <p>${course.description}</p>
+        <a class="btn" href="#" onclick="openPopup( ${course.video} )">🎬 Watch</a>
+      `;
+      container.appendChild(div);
+    });
+
+    const popup = document.getElementById( popup );
+    const videoFrame = document.getElementById( videoFrame );
+
+    function openPopup(videoUrl) {
+      popup.style.display =  flex ;
+      videoFrame.src = videoUrl;
+    }
+
+    function closePopup() {
+      popup.style.display =  none ;
+      videoFrame.src =   ;
+    }
+  </script>
+</body>
+</html>
