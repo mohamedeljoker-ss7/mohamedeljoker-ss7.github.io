@@ -1,270 +1,142 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Eljoker | Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Eljoker | Official Website</title>
   <style>
+    @import url( https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap );
     body {
       margin: 0;
-      font-family:  Cairo , sans-serif;
-      background: radial-gradient(circle at top, #0d0d12 0%, #000 100%);
+      font-family:  Poppins , sans-serif;
+      background-color: #0a0a0f;
       color: #fff;
-      text-align: center;
       overflow-x: hidden;
     }
-
     header {
-      background: linear-gradient(90deg, #0ff, #7b2ff7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 2.8rem;
-      font-weight: bold;
-      margin-top: 40px;
-      letter-spacing: 2px;
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(135deg, #000, #1e0037);
+      box-shadow: 0 0 30px #8b00ff33;
     }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: #aaa;
-      margin-bottom: 40px;
+    header img {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #8b00ff80;
     }
-
-    .courses-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 0 20px;
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      color: #bb86fc;
+      text-shadow: 0 0 10px #8b00ff;
     }
-
-    .course {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      width: 300px;
-      padding: 20px;
-      box-shadow: 0 0 10px #0ff3;
-      transition: 0.3s;
-    }
-
-    .course:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px #0ff7;
-    }
-
-    .course img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .course h2 {
-      background: linear-gradient(90deg, #0ff, #7b2ff7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .course p {
-      font-size: 0.95rem;
-      color: #bbb;
-      margin-bottom: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: linear-gradient(90deg, #0ff, #7b2ff7);
-      border: none;
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      filter: brightness(1.2);
-    }
-
-    footer {
+    h2 {
+      text-align: center;
+      color: #8b00ff;
       margin-top: 50px;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #888;
     }
-
-    iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-      border-radius: 10px;
-    }
-
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .popup-content {
-      background: #111;
-      border-radius: 15px;
-      padding: 15px;
-      width: 90%;
-      max-width: 700px;
-    }
-
-    .close-btn {
-      background: #ff0077;
-      border: none;
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      float: right;
-    }
-
-    /* قسم النبذة */
-    .about {
-      margin-top: 70px;
+    .content {
+      max-width: 900px;
+      margin: auto;
       padding: 40px 20px;
-      background: linear-gradient(180deg, #111, #000);
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .about h2 {
-      background: linear-gradient(90deg, #0ff, #7b2ff7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      color: #ccc;
-      font-size: 1.05rem;
-      max-width: 700px;
-      margin: 0 auto 25px auto;
       line-height: 1.8;
     }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .social a {
-      color: #0ff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      border: 1px solid #0ff5;
-      border-radius: 8px;
-      padding: 8px 14px;
+    .card {
+      background: #111;
+      border: 1px solid #2a0055;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px #8b00ff33;
       transition: 0.3s;
     }
-
-    .social a:hover {
-      background: linear-gradient(90deg, #0ff, #7b2ff7);
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px #8b00ff66;
+    }
+    .tech-list li {
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9em;
+      border-top: 1px solid #2a0055;
+      margin-top: 50px;
+    }
+    a {
+      color: #bb86fc;
+      text-decoration: none;
+    }
+    a:hover {
       color: #fff;
-      border-color: transparent;
+      text-shadow: 0 0 8px #8b00ff;
+    }
+    .social {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social a {
+      margin: 0 10px;
+      font-size: 1.2em;
+      color: #bb86fc;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://i.postimg.cc/MZ1CpsDR/file-0000000062e86246aee3bad8d6d755c8.png" alt="Banner" />
+    <h1>👑 Mohamed Eljoker 👑</h1>
+    <p>💻 Programmer | 📈 Trader | 🧠 AI Enthusiast</p>
+  </header>
 
-  <header>Mohamed Eljoker</header>
-  <div class="subtitle">💻 Programming & 📈 Trading Courses</div>
+  <div class="content">
+    <div class="card">
+      <h2>🧩 About Me</h2>
+      <p>
+        A passionate developer and trader who blends <b>technology with strategy</b>.<br>
+        Skilled in <b>web development</b>, <b>AI automation</b>, and <b>financial trading systems</b>.<br>
+        Always learning, building, and pushing the limits.<br><br>
+        <i>“Code. Create. Conquer.”</i>
+      </p>
+    </div>
 
-  <div class="courses-container" id="courses"></div>
+    <div class="card">
+      <h2>🛠️ Tech Stack</h2>
+      <ul class="tech-list">
+        <li>🌐 Frontend: HTML, CSS, JavaScript, React</li>
+        <li>⚙️ Backend: Python, Node.js</li>
+        <li>💾 Databases: Firebase, MySQL</li>
+        <li>📊 Trading Tools: MetaTrader, TradingView, Pine Script</li>
+        <li>🤖 AI Tools: ChatGPT, OpenAI API, TensorFlow</li>
+      </ul>
+    </div>
 
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <button class="close-btn" onclick="closePopup()">X</button>
-      <iframe id="videoFrame" src=""></iframe>
+    <div class="card">
+      <h2>🚀 My Projects</h2>
+      <ul>
+        <li>🧠 <b>AI Engineer Bot:</b> Smart assistant that explains engineering steps like a real mentor.</li>
+        <li>💹 <b>Trading Courses Hub:</b> Platform for structured trading education – 
+          <a href="https://mohamedeljoker-ss7.github.io">Visit</a></li>
+        <li>💻 <b>Programming Courses:</b> Interactive web-based learning system – 
+          <a href="https://mohamedeljoker-ss7.github.io">Visit</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💬 Quote</h2>
+      <blockquote>“The difference between a dream and a goal is a plan... and execution.”<br>— <b>Mohamed Eljoker</b></blockquote>
+    </div>
+
+    <div class="social">
+      <a href="https://github.com/mohamedeljoker-ss7" target="_blank">GitHub</a> |
+      <a href="https://t.me/mohamedeljoker" target="_blank">Telegram</a> |
+      <a href="mailto:mohamedeljoker@example.com">Email</a>
     </div>
   </div>
 
-  <!-- قسم النبذة -->
-  <section class="about">
-    <h2>About Mohamed Eljoker</h2>
-    <p>
-      أنا <strong>Mohamed Eljoker</strong>، مطوّر ومهتم بمجالات <b>البرمجة</b> و<b>التداول</b>،  
-      بحب أشارك معرفتي بطريقة بسيطة ومفهومة سواء بالعربي أو بالإنجليزي.  
-      هدفي إن كل شخص يتعلم skills تساعده يبني مستقبله بنفسه. 🚀
-    </p>
-    <div class="social">
-      <a href="https://github.com/mohamedeljoker-ss7" target="_blank">GitHub</a>
-      <a href="https://t.me/mohamedeljoker" target="_blank">Telegram</a>
-      <a href="https://www.youtube.com" target="_blank">YouTube</a>
-    </div>
-  </section>
-
-  <footer>Built & Designed by <b>Mohamed Eljoker 💻</b> — © 2025</footer>
-
-  <script>
-    // بيانات الكورسات
-    const courses = [
-      {
-        title: "دورة HTML للمبتدئين | HTML for Beginners",
-        category: "Programming",
-        description: "ابدأ رحلتك في تصميم المواقع باستخدام HTML basics.",
-        image: "https://i.postimg.cc/MZ1CpsDR/file-0000000062e86246aee3bad8d6d755c8.png",
-        video: "https://www.youtube.com/embed/pQN-pnXPaVg"
-      },
-      {
-        title: "أساسيات تداول الفوركس | Forex Basics",
-        category: "Trading",
-        description: "تعلم أهم مفاهيم التداول وفهم سوق الفوركس خطوة بخطوة.",
-        image: "https://i.postimg.cc/L4Vz5mPn/trading-banner.png",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-      },
-      {
-        title: "برمجة Python | Python Programming",
-        category: "Programming",
-        description: "تعلم كتابة أكواد Python بلغة سهلة وبأسلوب عملي.",
-        image: "https://i.postimg.cc/ncXkpr9G/python-banner.png",
-        video: "https://www.youtube.com/embed/kqtD5dpn9C8"
-      }
-    ];
-
-    const container = document.getElementById( courses );
-    courses.forEach(course => {
-      const div = document.createElement( div );
-      div.className =  course ;
-      div.innerHTML = `
-        <img src="${course.image}" alt="${course.title}">
-        <h2>${course.title}</h2>
-        <p>${course.description}</p>
-        <a class="btn" href="#" onclick="openPopup( ${course.video} )">🎬 Watch</a>
-      `;
-      container.appendChild(div);
-    });
-
-    const popup = document.getElementById( popup );
-    const videoFrame = document.getElementById( videoFrame );
-
-    function openPopup(videoUrl) {
-      popup.style.display =  flex ;
-      videoFrame.src = videoUrl;
-    }
-
-    function closePopup() {
-      popup.style.display =  none ;
-      videoFrame.src =   ;
-    }
-  </script>
+  <footer>⚡ Built and maintained by <b>Mohamed Eljoker</b> ⚡</footer>
 </body>
 </html>
