@@ -5,44 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>كورسات الجوكر</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #eee;
+      font-family:  Cairo , sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    header h1 {
+      color: #00ffcc;
+      margin: 0;
+    }
+
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .course-card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+      transition: 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00ffcc;
+    }
+
+    .course-card h3 {
+      color: #00ffcc;
+    }
+
+    .course-card p {
+      color: #aaa;
+    }
+
+    .course-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .course-card a:hover {
+      background-color: #0aff9d;
+    }
+
+    footer {
+      background: #111;
+      color: #777;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>🎓 كورسات محمد الجوكر 🎓</h1>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-    </nav>
   </header>
 
-  <main>
-    <section id="courses-container">
-      <h2>📚 جميع الكورسات</h2>
-      <div id="courses-list" class="courses-grid"></div>
-    </section>
-  </main>
+  <section class="courses-container" id="courses-container">
+    <p>جارٍ تحميل الكورسات...</p>
+  </section>
 
   <footer>
-    <p>© 2025 محمد الجوكر</p>
+    <p>© 2025 Mohamed Eljoker - All Rights Reserved</p>
   </footer>
 
   <script>
-    fetch( courses.json )
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById( courses-list );
-        data.forEach(course => {
+    async function loadCourses() {
+      try {
+        const response = await fetch( courses.json );
+        const courses = await response.json();
+
+        const container = document.getElementById( courses-container );
+        container.innerHTML =   ;
+
+        courses.forEach(course => {
           const div = document.createElement( div );
-          div.classList.add( course-card );
+          div.className =  course-card ;
           div.innerHTML = `
             <h3>${course.title}</h3>
             <p>${course.description}</p>
-            <video controls width="100%">
-              <source src="${course.video}" type="video/mp4">
-            </video>
+            <a href="${course.link}" target="_blank">🎥 شاهد الآن</a>
           `;
           container.appendChild(div);
         });
-      });
+      } catch (error) {
+        document.getElementById( courses-container ).innerHTML =  <p>⚠️ لم يتم العثور على الكورسات!</p> ;
+      }
+    }
+
+    loadCourses();
   </script>
+
 </body>
 </html>
