@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كورساتي</title>
+  <title>كورسات الجوكر</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>كورسات محمد الجوكر 🎥</h1>
+    <h1>🎓 كورسات محمد الجوكر 🎓</h1>
     <nav>
-      <a href="index.html">الصفحة الرئيسية</a>
+      <a href="index.html">الرئيسية</a>
     </nav>
   </header>
 
   <main>
     <section id="courses-container">
       <h2>📚 جميع الكورسات</h2>
-      <div id="courses-list"></div>
+      <div id="courses-list" class="courses-grid"></div>
     </section>
   </main>
 
@@ -38,7 +38,6 @@
             <p>${course.description}</p>
             <video controls width="100%">
               <source src="${course.video}" type="video/mp4">
-              متصفحك لا يدعم تشغيل الفيديو.
             </video>
           `;
           container.appendChild(div);
