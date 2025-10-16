@@ -1,48 +1,153 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كورسات الجوكر</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eljoker Courses</title>
+  <style>
+    body {
+      font-family:  Poppins , sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: linear-gradient(90deg, #111, #222);
+      border-bottom: 1px solid #333;
+    }
+
+    h1 {
+      color: #00ffe0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #00ffc3;
+      border-left: 5px solid #00ffc3;
+      padding-left: 10px;
+      margin: 40px 0 20px 0;
+    }
+
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .course-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .course-info {
+      padding: 15px;
+    }
+
+    .course-title {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .category {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🎓 كورسات محمد الجوكر 🎓</h1>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-    </nav>
+    <h1>Eljoker Courses</h1>
+    <p>By Mohamed Eljoker – Learn Programming & Trading</p>
   </header>
 
-  <main>
-    <section id="courses-container">
-      <h2>📚 جميع الكورسات</h2>
-      <div id="courses-list" class="courses-grid"></div>
-    </section>
-  </main>
+  <main id="courses"></main>
 
   <footer>
-    <p>© 2025 محمد الجوكر</p>
+    &copy; 2025 Mohamed Eljoker | All Rights Reserved
   </footer>
 
   <script>
-    fetch( courses.json )
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById( courses-list );
-        data.forEach(course => {
-          const div = document.createElement( div );
-          div.classList.add( course-card );
-          div.innerHTML = `
-            <h3>${course.title}</h3>
-            <p>${course.description}</p>
-            <video controls width="100%">
-              <source src="${course.video}" type="video/mp4">
-            </video>
-          `;
-          container.appendChild(div);
-        });
-      });
+    async function loadCourses() {
+      try {
+        const response = await fetch( courses.json );
+        const data = await response.json();
+
+        const programming = data.filter(c => c.category === "programming");
+        const trading = data.filter(c => c.category === "trading");
+
+        const container = document.getElementById( courses );
+
+        container.innerHTML = `
+          <section>
+            <h2>Programming Courses 💻</h2>
+            <div class="courses-container">
+              ${programming.map(course => `
+                <div class="course-card">
+                  <video controls>
+                    <source src="${course.video}" type="video/mp4">
+                    Your browser does not support video playback.
+                  </video>
+                  <div class="course-info">
+                    <div class="course-title">${course.title}</div>
+                    <div class="category">${course.category}</div>
+                  </div>
+                </div>
+              `).join(  )}
+            </div>
+          </section>
+
+          <section>
+            <h2>Trading Courses 📊</h2>
+            <div class="courses-container">
+              ${trading.map(course => `
+                <div class="course-card">
+                  <video controls>
+                    <source src="${course.video}" type="video/mp4">
+                    Your browser does not support video playback.
+                  </video>
+                  <div class="course-info">
+                    <div class="course-title">${course.title}</div>
+                    <div class="category">${course.category}</div>
+                  </div>
+                </div>
+              `).join(  )}
+            </div>
+          </section>
+        `;
+      } catch (err) {
+        document.getElementById( courses ).innerHTML = `<p style="text-align:center;color:#f44;">Error loading courses.</p>`;
+      }
+    }
+
+    loadCourses();
   </script>
 </body>
 </html>
