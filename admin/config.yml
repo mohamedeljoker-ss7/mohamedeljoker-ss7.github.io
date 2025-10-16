@@ -1,38 +1,20 @@
-# 1. إعداد الواجهة الخلفية (Backend)
 backend:
-  name: github # نحن نستخدم مستودع GitHub لحفظ التغييرات
-  repo: mohamedeljoker-ss7/mohamedeljoker-ss7.github.io # تأكد من أن هذا هو اسم مستودعك بالضبط
-  branch: main # اسم الفرع الرئيسي الذي تبني منه صفحة GitHub Pages (غالباً main أو master)
+  name: github
+  repo: mohamedeljoker-ss7/mohamedeljoker-ss7.github.io
+  branch: main
 
-# 2. إعدادات الوسائط (الصور)
-media_folder: "assets/uploads" # المجلد داخل المستودع الذي سيتم فيه حفظ الصور المرفوعة
-public_folder: "/assets/uploads" # المسار العام للوصول إلى الصور في الموقع
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
-# 3. إعداد المجموعات (Collections) - هنا يتم تعريف حقول الكورسات
 collections:
-  
-  # --- كورسات البرمجة ---
-  - name: "programming_courses" # اسم داخلي، يستخدم في كود Liquid (site.programming_courses)
-    label: "كورسات البرمجة"      # الاسم الذي يظهر في لوحة التحكم
-    folder: "_programming_courses" # المجلد الذي سيتم حفظ ملفات الكورسات فيه (يجب إنشاؤه في GitHub)
-    create: true                 # السماح للمسؤول بإنشاء محتوى جديد
-    slug: "{{slug}}"             # يتم تسمية الملفات بناءً على العنوان (مثلاً: python-course.md)
-    fields:                      # تحديد حقول بيانات الكورس
-      - {label: "عنوان الكورس", name: "title", widget: "string", required: true}
-      - {label: "ملخص الكورس", name: "summary", widget: "text", required: true, hint: "وصف موجز يظهر في البطاقة"}
-      - {label: "نص زر الرابط", name: "link_text", widget: "string", default: "شاهد الكورس"}
-      - {label: "رابط الكورس (URL)", name: "url", widget: "string", required: true, hint: "الرابط الكامل للفيديو أو الصفحة الخارجية"}
-      # إذا أردت إضافة حقول أخرى مثل صورة غلاف أو محتوى تفصيلي، أضفها هنا
-      
-  # --- كورسات التداول ---
-  - name: "trading_courses"
-    label: "كورسات التداول"
-    folder: "_trading_courses" # المجلد الذي سيتم حفظ ملفات الكورسات فيه (يجب إنشاؤه في GitHub)
+  - name: "programming_courses"
+    label: "دورات البرمجة"
+    folder: "_programming_courses"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "عنوان الكورس", name: "title", widget: "string", required: true}
-      - {label: "ملخص الكورس", name: "summary", widget: "text", required: true, hint: "وصف موجز يظهر في البطاقة"}
-      - {label: "نص زر الرابط", name: "link_text", widget: "string", default: "تعلّم الاستراتيجية"}
-      - {label: "رابط الكورس (URL)", name: "url", widget: "string", required: true, hint: "الرابط الكامل للفيديو أو الصفحة الخارجية"}
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - { label: "الصورة", name: "image", widget: "image" }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
       
