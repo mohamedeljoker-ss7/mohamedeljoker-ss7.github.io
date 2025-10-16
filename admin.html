@@ -1,150 +1,86 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>إدارة كورسات | Mohamed Eljoker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Mohamed Eljoker</title>
   <style>
     body {
-      background: #0a0a0a;
-      color: white;
-      font-family: "Cairo", sans-serif;
-      text-align: center;
+      background-color: #0a0a0f;
+      color: #fff;
+      font-family:  Poppins , sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 30px;
     }
     h1 {
-      color: #00ffcc;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
       margin-bottom: 20px;
     }
     form {
-      background: #111;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      max-width: 400px;
+      background: #111122;
       padding: 20px;
       border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 0 20px rgba(0,255,200,0.2);
+      box-shadow: 0 0 15px #00ffff55;
     }
-    input, textarea {
-      width: 90%;
+    input, textarea, button {
       margin: 10px 0;
       padding: 10px;
       border: none;
-      border-radius: 10px;
-      background: #222;
-      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+    }
+    input, textarea {
+      background: #1b1b2b;
+      color: #fff;
     }
     button {
-      background: #00ffcc;
+      background: #00ffff;
       color: #000;
       font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 20px;
       cursor: pointer;
       transition: 0.3s;
     }
     button:hover {
-      background: #00b894;
-    }
-    .course-list {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-    }
-    .course-card {
-      background: #111;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 0 10px rgba(0,255,200,0.15);
-    }
-    iframe {
-      width: 100%;
-      height: 200px;
-      border-radius: 10px;
-      margin-top: 10px;
+      background: #00cccc;
     }
   </style>
 </head>
 <body>
-
-  <h1>📚 لوحة إدارة كورسات Mohamed Eljoker</h1>
-
-  <form id="addCourseForm">
-    <input type="text" id="courseTitle" placeholder="اسم الكورس" required />
-    <textarea id="courseDesc" placeholder="وصف الكورس" required></textarea>
-    <input type="text" id="courseVideo" placeholder="رابط الفيديو (YouTube أو mp4)" required />
-    <button type="submit">➕ أضف الكورس</button>
+  <h1>🎓 Add New Course</h1>
+  <form id="courseForm">
+    <input type="text" id="title" placeholder="Course Title" required>
+    <textarea id="description" placeholder="Course Description" required></textarea>
+    <input type="text" id="video" placeholder="Video URL (e.g. YouTube link)" required>
+    <button type="submit">Add Course</button>
   </form>
 
-  <p id="msg"></p>
-
-  <div class="course-list" id="courseList"></div>
-
   <script>
-    const form = document.getElementById("addCourseForm");
-    const courseList = document.getElementById("courseList");
-    const msg = document.getElementById("msg");
+    const SHEET_ID = "169rwAifNXbV9iTi1VzSH4qc8F9lIpbBkiwUFh4Ojszo";
+    const SCRIPT_URL = `https://script.google.com/macros/s/AKfycbzmy3wSHEET_ID_HERE/exec`;
 
-    // تحميل الكورسات الموجودة في courses.json
-    let courses = [];
-
-    fetch("courses.json")
-      .then(res => res.json())
-      .then(data => {
-        courses = data;
-        renderCourses();
-      })
-      .catch(() => { msg.innerText = "⚠️ لا يوجد ملف كورسات بعد، سيتم إنشاؤه عند الإضافة."; });
-
-    // عرض الكورسات
-    function renderCourses() {
-      courseList.innerHTML = "";
-      courses.forEach((c, i) => {
-        const div = document.createElement("div");
-        div.className = "course-card";
-        div.innerHTML = `
-          <h3>${c.title}</h3>
-          <p>${c.desc}</p>
-          <iframe src="${c.video}" allowfullscreen></iframe>
-          <button onclick="deleteCourse(${i})">🗑️ حذف</button>
-        `;
-        courseList.appendChild(div);
-      });
-    }
-
-    // حذف كورس
-    function deleteCourse(i) {
-      courses.splice(i, 1);
-      renderCourses();
-      updateJSON();
-    }
-
-    // عند إضافة كورس جديد
-    form.addEventListener("submit", (e) => {
+    document.getElementById("courseForm").addEventListener("submit", e => {
       e.preventDefault();
-      const title = document.getElementById("courseTitle").value;
-      const desc = document.getElementById("courseDesc").value;
-      const video = document.getElementById("courseVideo").value.replace("watch?v=", "embed/");
+      const data = {
+        title: document.getElementById("title").value,
+        description: document.getElementById("description").value,
+        video: document.getElementById("video").value
+      };
 
-      courses.push({ title, desc, video });
-      renderCourses();
-      updateJSON();
-      form.reset();
+      fetch(`https://script.google.com/macros/s/${SHEET_ID}/exec`, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => alert("✅ Course added successfully!"))
+      .catch(err => alert("❌ Error: " + err.message));
     });
-
-    // حفظ ملف JSON جديد
-    function updateJSON() {
-      const blob = new Blob([JSON.stringify(courses, null, 2)], { type: "application/json" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "courses.json";
-      link.click();
-      msg.innerText = "✅ تم إنشاء ملف الكورسات الجديد — نزله وارفعه على GitHub.";
-    }
   </script>
-
 </body>
 </html>
