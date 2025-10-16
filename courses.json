@@ -1,17 +1,17 @@
 [
   {
-    "title": "كورس HTML الأساسي",
-    "description": "ابدأ رحلتك في تطوير الويب مع HTML.",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "title": "HTML Basics",
+    "description": "تعلم أساسيات بناء المواقع باستخدام HTML بطريقة سهلة ومبسطة.",
+    "link": "https://www.youtube.com/watch?v=UB1O30fR-EE"
   },
   {
-    "title": "كورس CSS المتقدم",
-    "description": "تعلم تصميم المواقع باحتراف باستخدام CSS.",
-    "video": "https://www.w3schools.com/html/movie.mp4"
+    "title": "CSS Mastery",
+    "description": "كورسات متقدمة في تنسيق وتصميم واجهات المواقع باستخدام CSS.",
+    "link": "https://www.youtube.com/watch?v=1Rs2ND1ryYc"
   },
   {
-    "title": "كورس JavaScript للمبتدئين",
-    "description": "ابدأ فهم لغة الجافاسكريبت خطوة بخطوة.",
-    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    "title": "Trading Basics",
+    "description": "تعلم أساسيات التداول خطوة بخطوة مع شرح مفصل للمبتدئين.",
+    "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   }
 ]
